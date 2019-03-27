@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>pingpong</title>
+<script src="jquery.js"></script>
+
+<style type="text/css">
+<!--
+body {
+background-color:c0c0c0;
+
+}
+
+td {
+background-color:ffffff;
+width:10;
+height:10;
+}
+
+.cze {
+background-color:ff0000;
+}
+//-->
+</style>
+
+<script language="JavaScript">
+
+<!--
+function show (){
+last_update = new Date().getTime();
+
+$.get("server2.php", { lastfetch : last_update },  function(data) {
+$("#tabela").html(data);
+});
+
+}
+
+
+$(document).keypress(function(e) {
+
+
+if (e.which == 97) {
+$.post("key2.php",{aaa : 'a'});
+}
+
+
+if (e.which == 119) {
+$.post("key2.php",{aaa : 'b'});
+}
+}
+
+);
+window.setInterval('show();', 100);
+$.post("stul.php",{aaa : 'zeruj'});
+//-->
+</script>
+
+</head>
+<body style="background-image: url('tlo.jpg');background-size: 100%;">
+<div id="tabela"></div>
+<br><br><br><br>
+<center>
+<input type="button" style="width:100%;height:150;" value="up" onclick="$.post('key2.php',{aaa : 'b'});"><br>
+<input type="button" style="width:100%;height:150;" value="down" onclick="$.post('key2.php',{aaa : 'a'});"><br>
+</body>
+</html>
+
+
+
